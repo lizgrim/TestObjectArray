@@ -38,16 +38,22 @@ struct TryView: View {
 
     var body: some View {
         
-        Text("Plant")
+         Text("Plant")
         Button(action: {
-            plantGroup.plantArray = []
+            //plantThing.plantArray = []
+            testArray = []
             count = 0
             while plantCount > count {
                 plantThing.setType()
-                let newPlant = plantThing
-                //plantGroup.plantArray.append(plant)
-                plantGroup.addPlant(plant:newPlant)
-                print ("plant:\(plantGroup.plantArray[count].plantType)")
+                let newPlant = TryPlant()
+                newPlant.setType()
+                self.testArray.append(newPlant)
+                //testArray.append(newPlant)
+                
+                //plantThing.plantArray.append(newPlant)
+                //plantThing.addPlant(plant:newPlant)
+                //print ("plant:\(plantThing.plantArray[count].plantType)")
+                print ("array:\(testArray[count].plantType) item:\(plantThing.plantType) array0:\(testArray[0].plantType)")
                 count+=1
             }
             print("0: \(plantGroup.plantArray[0].plantType)")
